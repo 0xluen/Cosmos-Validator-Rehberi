@@ -21,19 +21,19 @@ sudo apt upgrade -y <br></code></pre>
 
 <h2>Cüzdan Oluşturma</h2><br>
 Yeni cüzdan oluşturmak için aşağıdaki komutu kullanabilirsiniz. Hatırlatıcıyı(mnemonic) kaydetmeyi unutmayın.<br>
-<pre class="notranslate"><code> seid keys add <cuzdan adı> <br></code></pre>
+<pre class="notranslate"><code> seid keys add -cuzdanadı- <br></code></pre>
 
 <h3>Örnek </h3> 
  <pre class="notranslate"><code> seid keys add deneme</code></pre>
 
 (İSTEĞE BAĞLI) Cüzdanınızı özel anahtar (mnemonic) kullanarak kurtarmak için:
-<pre class="notranslate"><code> seid keys add <cuzdan adı> --recover</code></pre>
+<pre class="notranslate"><code> seid keys add -cuzdan adı- --recover</code></pre>
 
 <h3>Örnek </h3> 
 <pre class="notranslate"><code> seid keys add deneme --recover</code></pre>
 
 <h3>Cüzdan adresinizi öğrenmek için </h3>
-<pre class="notranslate"><code> seid keys show <cuzdan adi> -a</code></pre>
+<pre class="notranslate"><code> seid keys show -cuzdan adi- -a</code></pre>
   
 <h3>Örnek </h3>
 <pre class="notranslate"><code> seid keys show deneme -a</code></pre>
@@ -44,7 +44,7 @@ Yeni cüzdan oluşturmak için aşağıdaki komutu kullanabilirsiniz. Hatırlat�
 
 <h2>Cüzdan bakiyenizi kontrol etmek için:</h2>
   
-<pre class="notranslate"><code> seid query bank balances <cuzdan adresi></code></pre>
+<pre class="notranslate"><code> seid query bank balances -cuzdan adresi- </code></pre>
   
 <h3>Örnek </h3> 
   
@@ -58,14 +58,14 @@ Cüzdanınızda bakiyenizi göremiyorsanız, muhtemelen  hala eşitleniyordur. L
 <pre class="notranslate"><code>
 seid tx staking create-validator \
   --amount 1000000usei \
-  --from <cuzdan adı> \
+  --from -cuzdan adı- \
   --commission-max-change-rate "0.01" \
   --commission-max-rate "0.2" \
   --commission-rate "0.07" \
   --min-self-delegation "1" \
   --pubkey  $(seid tendermint show-validator) \
-  --moniker <validator adınız> \
-  --chain-id <chain ismi>
+  --moniker -validator adınız- \
+  --chain-id -chain ismi-
  </code></pre>
   <h4>Örnek</h4>
   <pre class="notranslate"><code>
@@ -81,7 +81,7 @@ seid tx staking create-validator \
   --chain-id sei-testnet-2
 </code></pre>
 <h2>Validator adresi görüntüleme </h2> 
-<pre class="notranslate"><code> seid keys show <cuzdan adi> --bech val -a</code></pre>
+<pre class="notranslate"><code> seid keys show -cuzdan adi- --bech val -a</code></pre>
   
 <h3>Örnek</h3>
 <pre class="notranslate"><code> seid keys show deneme --bech val -a</code></pre>
@@ -127,20 +127,20 @@ Yada olası bi sorunda restart komutu ile yeniden başlatılır .
   
 <h2>Cüzdan Silme</h2>
 
-<pre class="notranslate"><code> seid keys delete <cuzdan adi> </code></pre>
+<pre class="notranslate"><code> seid keys delete -cuzdan adi- </code></pre>
   
   <h3>Örnek</h3>
  <pre class="notranslate"><code>  seid keys delete deneme</code></pre>
 
 <h2>Cüzdandan Cüzdana Bakiye Transferi</h2>
 10000000usei
-<pre class="notranslate"><code> seid tx bank send <cuzdan adresiniz> <alıcı adres> <token miktarı></code></pre>
+<pre class="notranslate"><code> seid tx bank send -cuzdan adresiniz- -alıcı adres- -token miktarı-</code></pre>
   
   <h3>Örnek</h3>
 <pre class="notranslate"><code> seid tx bank send sei1fv4npf94ayteux82srsznyh8r6tahv7pzyrvvv sei1eenrsthfhs0nqd3uppalgsr34kq4sdc5rgt3lc 10000000usei</code></pre>
   
 <h2>Oylama</h2>
-<pre class="notranslate"><code> seid tx gov vote 1 yes --from <cuzdan adınız> --chain-id=<chain ismi></code></pre>
+<pre class="notranslate"><code> seid tx gov vote 1 yes --from -cuzdan adı- --chain-id=-chain ismi-</code></pre>
   <h3>Örnek</h3>
 <pre class="notranslate"><code> seid tx gov vote 1 yes --from deneme --chain-id= sei-testnet-2</code></pre>
 <h1>Stake, Delegasyon ve Ödüller<h1>
@@ -149,7 +149,7 @@ Yada olası bi sorunda restart komutu ile yeniden başlatılır .
 <pre class="notranslate"><code> seid tx staking delegate $VALOPER_ADDRESS 10000000usei --from=$WALLET --chain-id=$CHAIN_ID --gas=auto</code></pre>
 Payını doğrulayıcıdan başka bir doğrulayıcıya yeniden devretme:
 
-<pre class="notranslate"><code> seid tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000usei --from=$WALLET --chain-id=$CHAIN_ID --gas=auto </code></pre>
+<pre class="notranslate"><code> seid tx staking redelegate -kaynakValidatorAddress- -hedefValidatorAddress> 10000000usei --from=-cüzdan adı-- --chain-id=$CHAIN_ID --gas=auto </code></pre>
 <h3>Tüm ödülleri çek:</h3>
 
 <pre class="notranslate"><code> seid tx distribution withdraw-all-rewards --from=$WALLET --chain-id=$CHAIN_ID --gas=auto</code></pre>
@@ -159,7 +159,7 @@ Payını doğrulayıcıdan başka bir doğrulayıcıya yeniden devretme:
 
 <h3>Token Göndermek için :</h3>
   
-<pre class="notranslate"><code> seid tx bank send <gonderici cüzdan> <alıcı cüzdan> <token adedi> factory/<token adresi>/<token adı> --chain-id <chainid> --fees 5000usei --gas auto -y</code></pre> 
+<pre class="notranslate"><code> seid tx bank send -gonderici cüzdan- -alıcı cüzdan- -token adedi- factory/-token adresi-/-token adı- --chain-id -chainid- --fees 5000usei --gas auto -y</code></pre> 
   
   
 <h2>Validatör İsmini , Resmini ve Açıklamasını Değiştir</h2>
@@ -167,11 +167,11 @@ Payını doğrulayıcıdan başka bir doğrulayıcıya yeniden devretme:
 seid tx staking edit-validator  
 --moniker="Node İsminiz"  
 --website="websiteniz"   
---identity=<keybase anahtarı>  
+--identity=-keybase anahtarı-  
 --details="açıklama"   
---chain-id=<chain adı>
+--chain-id=-chain adı-
 --gas="auto"  
---from=<cüzdan adı>
+--from=-cüzdan adı-
 </code></pre>
  <h3> Örnek </h3>
  <pre class="notranslate"><code>
@@ -188,8 +188,8 @@ seid tx staking edit-validator
 <pre class="notranslate"><code>
 seid tx slashing unjail \
   --broadcast-mode=block \
-  --from=<cüzdan adı> \
-  --chain-id=<chain adı> \
+  --from=-cüzdan adı- \
+  --chain-id=-chain adı- \
   --gas=auto
   </code></pre>
   <h3>Örnek</h3>
