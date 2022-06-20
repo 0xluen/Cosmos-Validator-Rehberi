@@ -88,7 +88,7 @@ Senkronize olup olmadığını , çalışır durumda olup olmadığını görmen
   
 <pre class="notranslate"><code> journalctl -fu seid -o cat</code></pre>
   
-  <h2>Servis Yönetimi</h2>br>
+  <h2>Servis Yönetimi</h2><br>
   Herhangi bir güncelleme veya özel durumda servise gerekli müdahaleyi yapmanızı sağlar . Örneğin node durdurup güncellemek için kullanılır . 
 Yada olası bi sorunda restart komutu ile yeniden başlatılır . 
   
@@ -137,11 +137,11 @@ Yada olası bi sorunda restart komutu ile yeniden başlatılır .
 <pre class="notranslate"><code> seid tx gov vote 1 yes --from -cuzdan adı- --chain-id=-chain ismi-</code></pre>
   <h3>Örnek</h3>
 <pre class="notranslate"><code> seid tx gov vote 1 yes --from deneme --chain-id= sei-testnet-2</code></pre>
-<h1>Stake, Delegasyon ve Ödüller<h1>
-<h3>Delegate İşlemi:<h3>
+<h1>Stake, Delegasyon ve Ödüller</h1>
+<h3>Delegate İşlemi:</h3>
 
 <pre class="notranslate"><code> seid tx staking delegate $VALOPER_ADDRESS 10000000usei --from=$WALLET --chain-id=$CHAIN_ID --gas=auto</code></pre>
-Payını doğrulayıcıdan başka bir doğrulayıcıya yeniden devretme:
+<h3>Payını doğrulayıcıdan başka bir doğrulayıcıya yeniden devretme:</h3>
 
 <pre class="notranslate"><code> seid tx staking redelegate -kaynakValidatorAddress- -hedefValidatorAddress> 10000000usei --from=-cüzdan adı-- --chain-id=$CHAIN_ID --gas=auto </code></pre>
 <h3>Tüm ödülleri çek:</h3>
