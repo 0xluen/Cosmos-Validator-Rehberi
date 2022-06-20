@@ -1,11 +1,5 @@
 # Cosmos-Validator-Rehberi
 
-
-
-<pre class="notranslate"><code>seid keys list
-</code></pre>
-
-
 <h2>Kurulum Sırasında Eksik Paket ve Bağımlılık Sorunları İçin Repo Dosyası </h2> <br>
 <a href="https://gist.github.com/tedyun/56ee0bc8d9d954c8b707a018f0ca7992" target="_blank" > Tıklayınız </a> <br>
 sudo nano /etc/apt/sources.list<br>
