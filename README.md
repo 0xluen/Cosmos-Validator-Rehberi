@@ -127,7 +127,7 @@ Yada olası bi sorunda restart komutu ile yeniden başlatılır .
  <pre class="notranslate"><code>  seid keys delete deneme</code></pre>
 
 <h2>Cüzdandan Cüzdana Bakiye Transferi</h2>
-10000000usei
+
 <pre class="notranslate"><code> seid tx bank send -cuzdan adresiniz- -alıcı adres- -token miktarı-</code></pre>
   
   <h3>Örnek</h3>
