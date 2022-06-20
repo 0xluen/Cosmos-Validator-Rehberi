@@ -83,7 +83,7 @@ seid tx staking create-validator \
 <h1>Kullanışlı Komutlar</h1>
   
 
-<h2>Logları Kontrol Et</h2>br>
+<h2>Logları Kontrol Et</h2<br>
 Senkronize olup olmadığını , çalışır durumda olup olmadığını görmenize yardımcı olur . 
   
 <pre class="notranslate"><code> journalctl -fu seid -o cat</code></pre>
